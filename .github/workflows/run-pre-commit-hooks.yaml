@@ -1,0 +1,20 @@
+name: Execute pre-commit hooks
+
+on:
+  pull_request:
+  push:
+    branches: [master, pre-commit-hooks]
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - uses: actions/setup-python@v2
+    - name: Install dependencies
+      run: pip install -r scripts/dev-requirements.txt
+    - name: Enable pre-commit hooks
+      run: |
+        pre-commit install
+    - name: "Execute pre-commit hooks"
+      run: pre-commit run --all-files --show-diff-on-failure

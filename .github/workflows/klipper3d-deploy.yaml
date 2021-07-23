@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - docs-mkdocs
+      - pre-commit-hooks
     paths:
       - docs/**
       - mkdocs.yml
@@ -24,6 +25,8 @@ jobs:
             ${{ runner.os }}-pip-
       - name: Install dependencies
         run: pip install -r docs/_klipper3d/mkdocs-requirements.txt
+      - name: Validate markdown format
+        run: mdformat --check --number --wrap=80 docs/*.md
       - name: Build and deploy klipper3d
         run: |
           mkdocs gh-deploy --force --remote-branch gh-pages --verbose

@@ -4,3 +4,5 @@ mkdocs-section-index==0.3.1
 mkdocs-simple-hooks==0.1.3
 mkdocs-exclude==1.0.2
 mdx-truly-sane-lists==1.2
+mdformat==0.7.7
+mdformat_frontmatter==0.4.1
