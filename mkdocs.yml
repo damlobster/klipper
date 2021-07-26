@@ -60,7 +60,7 @@ extra:
   analytics:
   # https://squidfunk.github.io/mkdocs-material/setup/setting-up-site-analytics/#site-search-tracking
     provider: google
-    property: UA-138371409-1
+    property: UA-131268251-1
   # version:
   #   provider: mike
 nav:

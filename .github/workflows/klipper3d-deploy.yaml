@@ -2,7 +2,7 @@ name: klipper3d deploy
 on:
   push:
     branches:
-      - master
+      - docs-mkdocs-test
     paths:
       - docs/**
       - mkdocs.yml
